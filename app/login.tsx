@@ -4,8 +4,8 @@ import { router } from 'expo-router';
 
 export default function LoginPage() {
   const handleLoginSuccess = () => {
-    // Navigate to the main app after successful login
-    router.replace('/(tabs)');
+    // Navigate to welcome page after successful login
+    router.replace('/welcome');
   };
 
   return <LoginScreen onLoginSuccess={handleLoginSuccess} />;

@@ -4,7 +4,7 @@ import { router } from 'expo-router';
 
 export default function WelcomePage() {
 	const handleGetStarted = () => {
-		router.replace('/login');
+		router.replace('/(tabs)');
 	};
 
 	return <WelcomeScreen onGetStarted={handleGetStarted} />;
