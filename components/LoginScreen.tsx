@@ -1,20 +1,20 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import React, { useState } from 'react';
 import {
-	View,
-	Text,
-	TextInput,
-	TouchableOpacity,
-	StyleSheet,
-	SafeAreaView,
-	KeyboardAvoidingView,
-	Platform,
 	Alert,
 	Image,
-	ViewStyle,
-	TextStyle,
 	ImageStyle,
+	KeyboardAvoidingView,
+	Platform,
+	SafeAreaView,
+	StyleSheet,
+	Text,
+	TextInput,
+	TextStyle,
+	TouchableOpacity,
+	View,
+	ViewStyle,
 } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 
 interface LoginScreenProps {
   onLoginSuccess?: () => void;
@@ -32,8 +32,9 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
       return;
     }
 
-    if (!email.includes('@')) {
-      Alert.alert('Error', 'Please enter a valid email address');
+    // For testing purposes - accept any non-empty username and password
+    if (email.trim() === '' || password.trim() === '') {
+      Alert.alert('Error', 'Please fill in all fields');
       return;
     }
 
